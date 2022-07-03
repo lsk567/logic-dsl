@@ -1,0 +1,13 @@
+LPAREN=1
+RPAREN=2
+LBRACKET=3
+RBRACKET=4
+LAND=5
+LOR=6
+ID=7
+'('=1
+')'=2
+'['=3
+']'=4
+'&&'=5
+'||'=6

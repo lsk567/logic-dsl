@@ -13,11 +13,11 @@ public class Main {
     public static void main(String... args) {
         LOG.info("Running the example...");
 
-        ExprLexer lexer = new ExprLexer(CharStreams.fromString("100+2*6"));
+        MTLLexer lexer = new MTLLexer(CharStreams.fromString("a&&b||c"));
 
         CommonTokenStream tokens = new CommonTokenStream(lexer);
-        ExprParser parser = new ExprParser(tokens);
-        ParseTree parseTree = parser.expr();
+        MTLParser parser = new MTLParser(tokens);
+        ParseTree parseTree = parser.formula();
 
         ParseTreeWalker walker = new ParseTreeWalker();
         walker.walk(new MyListener(), parseTree);

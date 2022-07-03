@@ -5,7 +5,7 @@ plugins {
     id "antlr"
 }
 
-group = 'com.github.gregwhitaker'
+group = 'org.lflang'
 version = '0.1.0'
 sourceCompatibility = 1.8
 mainClassName = 'example.antlr.Main'
