@@ -20,6 +20,6 @@ public class Main {
         ParseTree parseTree = parser.formula();
 
         ParseTreeWalker walker = new ParseTreeWalker();
-        walker.walk(new MyListener(), parseTree);
+        walker.walk(new MTLListener(), parseTree);
     }
 }
