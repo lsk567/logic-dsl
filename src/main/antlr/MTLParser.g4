@@ -2,8 +2,16 @@ parser grammar MTLParser;
 
 options { tokenVocab=MTLLexer; }
 
-formula
-    : disjunction
+mtl
+    : equivalence
+    ;
+
+equivalence
+    : left=implication ( EQUI right=implication )?
+    ;
+
+implication
+    : left=disjunction ( IMPL right=disjunction )?
     ;
 
 disjunction
@@ -11,5 +19,25 @@ disjunction
     ;
 
 conjunction
-    : terms+=ID ( LAND terms+=ID )*
+    : terms+=binaryOp ( LAND terms+=binaryOp )*
+    ;
+
+binaryOp
+    : left=unaryOp UNTIL right=unaryOp
+    ;
+
+unaryOp
+    : formula=primary
+    | NEG formula=primary
+    ;
+
+primary
+    : atom=atomicProp
+    // | formula=mtl
+    | LPAREN formula=mtl RPAREN
+    ;
+
+atomicProp
+    : primitive=TRUE
+    | primitive=FALSE
     ;

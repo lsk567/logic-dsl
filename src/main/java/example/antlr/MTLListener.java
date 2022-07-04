@@ -7,17 +7,27 @@ public class MTLListener extends MTLParserBaseListener {
     private static final Logger LOG = LoggerFactory.getLogger(MTLListener.class);
 
     @Override
-    public void enterFormula(MTLParser.FormulaContext ctx) {
-        LOG.info(ctx.getText());
+    public void enterMtl(MTLParser.MtlContext ctx) {
+        LOG.info("Formula: " + ctx.getText());
+    }
+
+    @Override
+    public void enterEquivalence(MTLParser.EquivalenceContext ctx) {
+        LOG.info("Equivalence: " + ctx.getText());
+    }
+    
+    @Override
+    public void enterImplication(MTLParser.ImplicationContext ctx) {
+        LOG.info("Implication: " + ctx.getText());
     }
 
     @Override
     public void enterDisjunction(MTLParser.DisjunctionContext ctx) {
-        LOG.info(ctx.getText());
+        LOG.info("Disjunction: " + ctx.getText());
     }
 
     @Override
     public void enterConjunction(MTLParser.ConjunctionContext ctx) {
-        LOG.info(ctx.getText());
+        LOG.info("Conjunction: " + ctx.getText());
     }
 }

@@ -24,8 +24,32 @@ LOR
     : '||'
     ;
 
+EQUI
+    : '<==>'
+    ;
+
+IMPL
+    : '==>'
+    ;
+
+UNTIL
+    : 'U'
+    ;
+
+NEG
+    : '!'
+    ;
+
 WS
-    :  [ \t\r\n]+ -> skip
+    : [ \t\r\n]+ -> skip
+    ;
+
+TRUE
+    : 'true'
+    ;
+
+FALSE
+    : 'false'
     ;
 
 ID
