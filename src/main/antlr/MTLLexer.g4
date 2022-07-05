@@ -36,7 +36,7 @@ UNTIL
     : 'U'
     ;
 
-NEGATE
+NEGATION
     : '!'
     ;
 

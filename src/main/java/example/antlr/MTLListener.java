@@ -37,8 +37,28 @@ public class MTLListener extends MTLParserBaseListener {
     }
 
     @Override
-    public void enterUnaryOp(MTLParser.UnaryOpContext ctx) {
+    public void enterNoUnaryOp(MTLParser.NoUnaryOpContext ctx) {
         LOG.info("UnaryOp: " + ctx.getText() + ". Rule index: " + ctx.getRuleIndex());
+    }
+
+    @Override
+    public void enterNegation(MTLParser.NegationContext ctx) {
+        LOG.info("Negation: " + ctx.getText() + ". Rule index: " + ctx.getRuleIndex());
+    }
+
+    @Override
+    public void enterNext(MTLParser.NextContext ctx) {
+        LOG.info("Next: " + ctx.getText() + ". Rule index: " + ctx.getRuleIndex());
+    }
+
+    @Override
+    public void enterGlobally(MTLParser.GloballyContext ctx) {
+        LOG.info("Globally: " + ctx.getText() + ". Rule index: " + ctx.getRuleIndex());
+    }
+
+    @Override
+    public void enterFinally(MTLParser.FinallyContext ctx) {
+        LOG.info("Finally: " + ctx.getText() + ". Rule index: " + ctx.getRuleIndex());
     }
 
     @Override

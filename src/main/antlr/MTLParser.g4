@@ -27,11 +27,11 @@ binaryOp
     ;
 
 unaryOp
-    : formula=primary
-    | NEGATE formula=primary
-    | NEXT formula=primary
-    | GLOBALLY formula=primary
-    | FINALLY formula=primary
+    : formula=primary # NoUnaryOp
+    | NEGATION formula=primary # Negation
+    | NEXT formula=primary # Next
+    | GLOBALLY formula=primary # Globally
+    | FINALLY formula=primary # Finally
     ;
 
 primary
