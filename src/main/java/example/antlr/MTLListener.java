@@ -30,4 +30,24 @@ public class MTLListener extends MTLParserBaseListener {
     public void enterConjunction(MTLParser.ConjunctionContext ctx) {
         LOG.info("Conjunction: " + ctx.getText());
     }
+
+    @Override
+    public void enterBinaryOp(MTLParser.BinaryOpContext ctx) {
+        LOG.info("BinaryOp: " + ctx.getText());
+    }
+
+    @Override
+    public void enterUnaryOp(MTLParser.UnaryOpContext ctx) {
+        LOG.info("UnaryOp: " + ctx.getText());
+    }
+
+    @Override
+    public void enterPrimary(MTLParser.PrimaryContext ctx) {
+        LOG.info("Primary: " + ctx.getText());
+    }
+
+    @Override
+    public void enterAtomicProp(MTLParser.AtomicPropContext ctx) {
+        LOG.info("AtomicProp: " + ctx.getText());
+    }
 }

@@ -23,7 +23,7 @@ conjunction
     ;
 
 binaryOp
-    : left=unaryOp UNTIL right=unaryOp
+    : left=unaryOp (UNTIL right=unaryOp)?
     ;
 
 unaryOp
@@ -33,7 +33,7 @@ unaryOp
 
 primary
     : atom=atomicProp
-    // | formula=mtl
+    | id=ID
     | LPAREN formula=mtl RPAREN
     ;
 
