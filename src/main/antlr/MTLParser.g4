@@ -28,7 +28,10 @@ binaryOp
 
 unaryOp
     : formula=primary
-    | NEG formula=primary
+    | NEGATE formula=primary
+    | NEXT formula=primary
+    | GLOBALLY formula=primary
+    | FINALLY formula=primary
     ;
 
 primary

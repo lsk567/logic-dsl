@@ -36,8 +36,20 @@ UNTIL
     : 'U'
     ;
 
-NEG
+NEGATE
     : '!'
+    ;
+
+NEXT
+    : 'X'
+    ;
+
+GLOBALLY
+    : 'G'
+    ;
+
+FINALLY
+    : 'F'
     ;
 
 WS
