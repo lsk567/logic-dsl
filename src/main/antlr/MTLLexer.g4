@@ -1,5 +1,9 @@
 lexer grammar MTLLexer;
 
+COMMA
+    : ','
+    ;
+
 LPAREN
     : '('
     ;
@@ -62,6 +66,14 @@ TRUE
 
 FALSE
     : 'false'
+    ;
+
+ZERO
+    : '0'
+    ;
+
+INTEGER
+    : [0-9][0-9]*
     ;
 
 ID
