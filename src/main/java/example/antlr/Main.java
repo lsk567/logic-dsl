@@ -13,8 +13,9 @@ public class Main {
     public static void main(String... args) {
         LOG.info("Running the example...");
 
-        MTLLexer lexer = new MTLLexer(CharStreams.fromString("F(0, 5 sec]((a_0 && b_1) || c_2) ==> G[0, 2 sec](d_3)"));
-
+        MTLLexer lexer = new MTLLexer(CharStreams.fromString("Simple_a_reaction_0 ==> F[0,5 nsec]( Simple_b_in_is_present && Simple_b_in == 1 )"));
+        // MTLLexer lexer = new MTLLexer(CharStreams.fromString("F(0, 5 sec]((a_0 && b_1) || c_2) ==> G[0, 2 sec](d_3)"));
+        
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         MTLParser parser = new MTLParser(tokens);
         ParseTree parseTree = parser.mtl();
